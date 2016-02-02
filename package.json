@@ -2,10 +2,9 @@
   "name": "store-settings",
   "version": "1.0.0",
   "description": "A standalone class for express style application settings",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
-    "test": "happiness && npm run babel && mocha --require babel-register",
-    "babel": "babel src --out-dir lib"
+    "test": "happiness && mocha --require babel-register"
   },
   "repository": {
     "type": "git",
@@ -22,7 +21,6 @@
   },
   "homepage": "https://github.com/wesleytodd/express-settings#readme",
   "devDependencies": {
-    "babel-cli": "^6.4.5",
     "babel-preset-es2015": "^6.3.13",
     "babel-register": "^6.4.3",
     "happiness": "^5.5.0",

@@ -1,7 +1,7 @@
 /* globals describe it */
 var assert = require('assert');
 var util = require('util');
-var Settings = require('../lib/index').Settings;
+var Settings = require('../lib/index');
 
 describe('Settings', function () {
 	describe('.set()', function () {
