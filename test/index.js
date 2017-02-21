@@ -92,6 +92,7 @@ describe('Settings', function () {
   })
 
   describe('mixin/inheritance', function () {
+    /*
     it('should allow es2015 style class inheritance', function () {
       class Foo extends Settings {
         constructor () {
@@ -114,6 +115,7 @@ describe('Settings', function () {
       assert.equal(f.foo(), 'bar')
       assert.equal(f.get('foobar'), 'foobar')
     })
+    */
 
     it('should allow es5 style class inheritance', function () {
       var Foo = function () {
