@@ -3,7 +3,7 @@
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
 [![Build Status](https://travis-ci.org/wesleytodd/store-settings.svg?branch=master)](https://travis-ci.org/wesleytodd/store-settings)
-[![js-happiness-style](https://img.shields.io/badge/code%20style-happiness-brightgreen.svg)](https://github.com/JedWatson/happiness)
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](http://standardjs.com/)
 
 A stand-alone implementation of the settings portion of express.  The class that is exported can be mixed into or extended from in your application.
 
