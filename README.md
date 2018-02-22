@@ -25,6 +25,11 @@ store.set('foo', 'bar');
 // Get a value
 store.get('foo'); // 'bar'
 
+// Extend a value
+store.set('foo', { 'bar': 1 });
+store.extend('foo', { 'baz': 2 });
+store.get('foo'); // { 'bar': 1, 'baz': 2 }
+
 // Boolean values
 store.enable('yep');
 store.enabled('yep'); // true

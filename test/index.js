@@ -34,6 +34,54 @@ describe('Settings', function () {
     })
   })
 
+  describe('.extend()', function () {
+    it('should set if value is nonexistent', function () {
+      var app = new Settings()
+      app.extend('foo', { 'bar': 1 })
+      assert.deepEqual(app.get('foo'), { 'bar': 1 })
+    })
+
+    it('should extend an object', function () {
+      var app = new Settings()
+      app.extend('foo', { 'bar': 1 })
+      app.extend('foo', { 'baz': 1 })
+      assert.deepEqual(app.get('foo'), { 'bar': 1, 'baz': 1 })
+    })
+
+    it('should not extend by reference', function () {
+      var app = new Settings()
+
+      app.set('foo', { active: false })
+      assert.equal(app.get('foo').active, false)
+
+      var foo = app.get('foo')
+      app.extend('foo', { active: true })
+      assert.equal(app.get('foo').active, true)
+      assert.equal(foo.active, false)
+    })
+
+    it('should return the app', function () {
+      var app = new Settings()
+      assert.equal(app.extend('foo', { 'bar': 1 }), app)
+    })
+
+    it('should return the app when undefined', function () {
+      var app = new Settings()
+      assert.equal(app.extend('foo', undefined), app)
+    })
+
+    it('should throw on a bad value', function () {
+      var app = new Settings()
+      assert.throws(
+        function () {
+          app.extend('foo', null)
+        },
+        Error,
+        'value needs to be an object'
+      )
+    })
+  })
+
   describe('.enable()', function () {
     it('should set the value to true', function () {
       var app = new Settings()
