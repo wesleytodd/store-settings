@@ -1,6 +1,6 @@
 {
   "name": "store-settings",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A standalone class for express style application settings",
   "main": "./index.js",
   "scripts": {
