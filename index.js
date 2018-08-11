@@ -1,3 +1,5 @@
+'use strict'
+
 var Settings = module.exports = function Settings (opts) {
   opts = opts || {}
   this.parent = null

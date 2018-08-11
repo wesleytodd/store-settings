@@ -4,7 +4,7 @@
   "description": "A standalone class for express style application settings",
   "main": "./index.js",
   "scripts": {
-    "test": "standard --fix && standard && mocha"
+    "test": "standard && mocha"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/wesleytodd/express-settings#readme",
   "devDependencies": {
-    "mocha": "^2.4.5",
-    "standard": "^8.6.0"
+    "mocha": "^5.2.0",
+    "standard": "^11.0.1"
   }
 }
