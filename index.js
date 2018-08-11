@@ -22,6 +22,29 @@ Settings.prototype.get = function (setting) {
   return (typeof val !== 'undefined') ? val : (this.parent) ? this.parent.get(setting) : undefined
 }
 
+Settings.prototype.extend = function (setting, val) {
+  var currentSetting = this.settings[setting]
+
+  if (typeof val === 'undefined') {
+    return this
+  } else if (val === null || typeof val !== 'object') {
+    throw new Error('value needs to be an object')
+  }
+
+  // no object yet, set value
+  if (currentSetting === null || typeof currentSetting !== 'object') {
+    this.settings[setting] = val
+    return this
+  }
+
+  // extend from the intial object type
+  var newObject = Array.isArray(this.settings[setting]) ? [] : {}
+
+  // extend value
+  this.settings[setting] = Object.assign(newObject, this.settings[setting], val)
+  return this
+}
+
 Settings.prototype.enable = function (setting) {
   return this.set(setting, true)
 }
