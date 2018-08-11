@@ -4,7 +4,8 @@
   "description": "A standalone class for express style application settings",
   "main": "./index.js",
   "scripts": {
-    "test": "standard && mocha"
+    "test": "standard && mocha",
+	"pretest": "underFour=$(node ./test/_under-four.js); if [ ${underFour} = \"true\" ]; then npm install --no-save mocha@3; fi"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   "homepage": "https://github.com/wesleytodd/express-settings#readme",
   "devDependencies": {
     "mocha": "^5.2.0",
+    "semver": "^5.5.0",
     "standard": "^11.0.1"
   }
 }
